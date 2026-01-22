@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  min-height: 100vh;
+  padding: 4rem;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 85%,
+      white 100%
+    ),
+    url("bg.png") center / cover no-repeat;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+/* HERO GRID */
+.hero-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+/* HERO LEFT */
+.hero-left h1 {
+  font-size: 4rem;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+/* HERO TEXT BOXES */
+.text-box {
+  background: rgba(0,0,0,0.45);
+  color: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+/* INDENTED INFO */
+.block-indent {
+  margin-left: 1rem;
+  margin-top: 0.25rem;
+  opacity: 0.9;
+}
+
+/* HERO RIGHT */
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  height: 420px;
+}
+
+/* =========================
+   IMAGE BOXES
+========================= */
+.image-box {
+  width: 100%;
+  height: 350px;
+  background: #d1d1d1;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  color: #555;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.image-box.wide {
+  height: 260px;
+}
+
+/* =========================
+   LARGE FEATURE SECTIONS
+========================= */
+.feature-section {
+  min-height: 90vh;
+  padding: 6rem 2rem;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-section.alt {
+  background: #f3f4f8;
+}
+
+/* Subtle glow overlay */
+.feature-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(46, 204, 113, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* FEATURE CONTENT */
+.feature-content {
+  max-width: 900px;
+  margin: 0 auto;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* SECTION HEADERS */
+.feature-content h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  color: #2ecc71;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Header underline */
+.feature-content h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #2ecc71;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+}
+
+/* SECTION TEXT */
+.feature-content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* Slight hover lift */
+.feature-content {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.feature-section:hover .feature-content {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   BOTTOM IMAGE SECTION
+========================= */
+.bottom-image {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .feature-content h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* HERO INTRO TEXT */
+.hero-intro {
+  color: white;
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* HERO INFO GRID */
+.hero-info-grid {
+  padding-left: 20px;
+  background: #333;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem 2rem;
+  max-width: 540px;
+  max-height: 340px;
+}
+
+.hero-info-grid strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2ecc71;
+  margin-bottom: 0.2rem;
+}
+
+.hero-info-grid span {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.4;
+}
+
+/* DISCLAIMER FULL WIDTH */
+.hero-disclaimer {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.5rem;
+}
+
