@@ -11,53 +11,84 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   min-height: 100vh;
   background: url("bg.png") center / cover no-repeat;
-  padding: 5rem 4vw;
+  padding: 4rem 6vw;
   display: flex;
   align-items: flex-start;
 }
 
-.hero-fade {
-  height: 140px;
-  margin-top: -140px;
-  background: linear-gradient(to bottom, rgba(14,17,23,0), #0e1117);
-}
-
 .hero-grid {
-  max-width: 1400px;
-  margin: 0;
-  padding-top: 2rem;
+  max-width: 1600px;
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 6vw, 4.8rem);
+  font-size: clamp(3.8rem, 6vw, 5.2rem);
   color: #ffffff;
-  margin-bottom: 3rem;
-  margin-top: 0;
+  margin: 0.5rem 0 2.5rem;
+  line-height: 1.1;
 }
 
 .text-box {
-  background: rgba(15, 20, 30, 0.85);
-  padding: 1.4rem 1.6rem;
-  border-radius: 14px;
-  margin-bottom: 1.2rem;
-  max-width: 520px;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 26, 40, 0.95),
+    rgba(12, 16, 26, 0.95)
+  );
+  padding: 2rem 2.4rem;
+  border-radius: 18px;
+  margin-bottom: 1.6rem;
+  max-width: 640px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.text-box:first-of-type {
+  font-size: 1.15rem;
+  line-height: 1.75;
 }
 
 .text-box.condensed {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* SECTIONS */
+.hero-fade {
+  height: 160px;
+  margin-top: -160px;
+  background: linear-gradient(
+    to bottom,
+    rgba(14,17,23,0),
+    #0e1117
+  );
+}
+
+/* =========================
+   INFO SECTIONS
+========================= */
 .info-section {
   min-height: 100vh;
   padding: 6rem 8vw;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.info-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px 300px at 15% 50%,
+    rgba(107,230,117,0.08),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .info-section.alt {
@@ -84,41 +115,73 @@ body {
 .info-grid.reverse .section-render {
   order: 1;
 }
+
+/* =========================
+   INFO TEXT CARDS
+========================= */
+.info-text {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 26, 40, 0.85),
+    rgba(12, 16, 26, 0.85)
+  );
+  padding: 2.8rem 3.2rem;
+  border-radius: 20px;
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
 .info-text h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 2rem;
   color: #6be675;
+  position: relative;
+}
+
+.info-text h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6be675, transparent);
+  border-radius: 2px;
 }
 
 .info-text p {
   font-size: 1.15rem;
   line-height: 1.8;
-  max-width: 700px;
+  color: #d6dbe5;
 }
 
-/* RENDERS */
+/* =========================
+   RENDERS
+========================= */
 .section-render {
   width: 100%;
   max-width: 520px;
   justify-self: center;
-
   opacity: 0;
   transform: translateY(40px) scale(0.96);
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.active .section-render {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-/* REVEAL TEXT */
+
+/* =========================
+   REVEAL ANIMATIONS
+========================= */
 .reveal-title,
 .reveal-content {
   opacity: 0;
-  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
-              transform 0.9s cubic-bezier(0.22,1,0.36,1);
+  transition:
+    opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+    transform 0.9s cubic-bezier(0.22,1,0.36,1);
 }
 
 .reveal-title {
@@ -139,41 +202,114 @@ body {
   transition-delay: 0.15s;
 }
 
-/* FINAL SECTION */
+/* =========================
+   FINAL REGISTRATION SECTION
+========================= */
 .final-section {
   flex-direction: column;
+  padding: 8rem 0 0;
   text-align: center;
-  padding-bottom: 0;
+  overflow: hidden;
 }
 
-/* SIGNUP BUTTON */
+.final-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    700px 300px at 50% 25%,
+    rgba(107,230,117,0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.final-content {
+  z-index: 2;
+  margin-bottom: 5rem;
+}
+
+.pricing-card {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    rgba(18,36,30,0.95),
+    rgba(12,20,18,0.95)
+  );
+  padding: 3rem 3.5rem;
+  border-radius: 22px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(107,230,117,0.35);
+}
+
+/* =========================
+   BUTTON
+========================= */
 .signup-btn {
   display: inline-block;
-  margin-top: 2.5rem;
+  margin-top: 2.8rem;
   padding: 1rem 2.8rem;
   background: #6be675;
   color: #0e1117;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .signup-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(107,230,117,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(107,230,117,0.45);
 }
 
-/* BANNER */
+/* =========================
+   FINAL BANNER (FIXED CROP)
+========================= */
 .final-banner {
   width: 100%;
-  height: 220px;
-  margin-top: 4rem;
-  background: url("banner.png") center / cover no-repeat;
-  border-radius: 10px;
+  height: 520px;
+  background: url("banner.png") center bottom / contain no-repeat;
+  background-color: #0b0f16;
+  box-shadow: inset 0 20px 60px rgba(0,0,0,0.6);
 }
 
-/* MOBILE */
+/* =========================
+   TEXT UTILITIES
+========================= */
+.key {
+  color: #9aa4b2;
+}
+
+.value {
+  color: #e6e9ef;
+}
+
+.highlight {
+  color: #6be675;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(107,230,117,0.25);
+}
+
+.emphasis {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.rule-bad {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255,107,107,0.25);
+}
+
+.price {
+  color: #6be675;
+  font-weight: 700;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 900px) {
   .info-grid,
   .info-grid.reverse {
@@ -188,5 +324,9 @@ body {
 
   .section-render {
     margin: 2rem auto 0;
+  }
+
+  .final-banner {
+    height: 360px;
   }
 }
