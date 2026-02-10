@@ -12,7 +12,8 @@
 <header class="hero">
   <div class="hero-grid">
     <div class="hero-left">
-      <h1>Cisco Gaming Tournament</h1>
+      <img src="title.png" alt="Cisco Gaming Tournament" class="hero-title-img">
+
 
       <div class="text-box">
         Craft your way to victory in the Cisco Gaming Tournament! Bring friends and defeat foes to win prizes!
@@ -20,9 +21,11 @@
 
       <div class="text-box condensed">
   <span class="key">Game:</span> <span class="value">Java Edition 1.21.10</span><br>
-  <span class="key">Date:</span> <span class="value highlight">March 19th • 5–9 PM EST</span><br>
+  <span class="key">Date:</span> <span class="value highlight">April 10th • 5–9 PM EST</span><br>
   <span class="key">Location:</span> <span class="value">Courthouse Tech Center</span><br>
-  <span class="key">Prizes:</span> <span class="value highlight">Gift cards for winning team</span><br>
+  <span class="key">Prize Pool:</span> <span class="value prize-pool">$500</span><br>
+<span class="key">Prizes:</span> <span class="value highlight">Gift cards for the TOP 3 TEAMS</span><br>
+
 </div>
     </div>
   </div>
@@ -88,11 +91,12 @@
     <div class="info-text">
       <h2 class="reveal-title">Date, Time & Location</h2>
       <div class="reveal-content">
-        <p>
-          March 19th • 5:00–9:00 PM EST
+        <p  class="emphasis">
+          April 10th • 5:00–9:00 PM EST
           <br><br>
           10101 Courthouse Rd, Chesterfield, VA 23832
         </p>
+        <p>Check ins start at 5pm</p>
       </div>
     </div>
     <img src="render4.png" class="section-render left">
@@ -101,13 +105,35 @@
 
 <section class="info-section reveal">
   <div class="info-grid">
-    <div class="info-text">
+    <div class="info-text sponsors-card">
       <h2 class="reveal-title">Sponsorships</h2>
+
       <div class="reveal-content">
-        <p>CTC Cyber Booster Club</p>
+        <p class="muted" style="margin-bottom: 1.25rem;">
+          Thanks to our sponsors for supporting the tournament.
+        </p>
+
+        <!-- Modular sponsor grid: add more .sponsor-item blocks as needed -->
+        <div class="sponsor-grid">
+          <div class="sponsor-item featured">
+            <div class="sponsor-logo">
+              <img src="CCTCyber.png" alt="CTC Cyber Booster Club Logo">
+            </div>
+            <div class="sponsor-meta">
+              <div class="sponsor-name">CTC Cyber Booster Club</div>
+              <div class="sponsor-tier">Official Sponsor</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="sponsor-cta">
+          Want to sponsor the event? <span class="highlight">Contact us at cisco2026gaming@gmail.com</span>.
+        </div>
       </div>
     </div>
-    <img src="render1.png" class="section-render right">
+
+    <!-- Keep a large render on the side (same vibe as other sections) -->
+    <img src="render1.png" class="section-render right" alt="Sponsor render">
   </div>
 </section>
 
@@ -158,3 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
+
+<!-- Minecraft Ultra Hardcore (UHC) PvP against othere squds
+The top 3 teams will recieve PRIZES for each member of their team 
+-->
