@@ -380,6 +380,15 @@ body {
   object-fit: cover;
 }
 
+.sponsor-logo.portrait {
+  width: 80px;
+  height: 110px;
+}
+
+.sponsor-logo.portrait img {
+  object-fit: contain;
+}
+
 .sponsor-meta {
   display: flex;
   flex-direction: column;
