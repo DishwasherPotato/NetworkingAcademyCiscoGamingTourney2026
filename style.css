@@ -385,6 +385,15 @@ body {
   height: 110px;
 }
 
+.sponsor-logo.landscape {
+  width: 110px;
+  height: 64px;
+}
+
+.sponsor-logo.landscape img {
+  object-fit: contain;
+}
+
 .sponsor-logo.portrait img {
   object-fit: contain;
 }
