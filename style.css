@@ -410,6 +410,7 @@ body {
   color: #ffffff;
 }
 
+
 .sponsor-tier {
   font-size: 0.95rem;
   color: #9aa4b2;
@@ -427,6 +428,16 @@ body {
   .sponsor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+
+#odg .sponsor-logo {
+  height: 75px;      /* increase vertical space */
+  padding: 8px;      /* adds breathing room */
+}
+
+#odg .sponsor-logo img {
+  object-fit: contain;
 }
 
 .hero-cta-row {
